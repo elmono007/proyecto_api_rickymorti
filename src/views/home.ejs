@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Proyecto API</title>
+</head>
+<body class="body_container">
+    <header class="header_container">
+        <div class="header_container_elem1">
+            <h1>Rick & Morty</h1>
+        </div>
+    </header>
+    
+    <main class="main_container">
+        <div class="main_element1">API con los personajes de la famosa serie</div>
+        <div class="main_element1_b">(Haga click en un personaje para ver el detalle)</div>
+        <div class="main_element2">
+            <% let page_prev = page - 1 %>
+            <% if (page_prev <= 0) { page_prev = 1} %>
+            <% let page_next = parseInt(page) + 1 %>
+            <div class="navButton"><a href="/page/<%= page_prev %>">Previous</a></div>
+            <div class="pageCount">Page: <%= page%></div>
+            <div class="navButton"><a href="/page/<%= page_next %>">Next</a></div>
+        </div>
+        <div class="characters_container">
+                <% rickymortiCharacters.forEach(e => { %>    
+                    <div class="characterWindow">        
+                        <a href="/details/<%= e.id %>"><img src="<%= e.image %>" class="characterImage"></a> 
+                        <div class="characterInfo"><%= e.name %></div>
+                    </div>
+                <% }) %>
+            
+        </div>
+    </main>   
+    <footer class="footer_container"> 
+        
+        <div class="footer_container_elem1">
+            <p>©Ernesto Caballero Vieyra | 2023</p> 
+        </div>
+        <div class="footer_container_elem2">
+            <p>
+              Github: <a href="https://github.com/elmono007" target="_blank"> elmono007</a>  
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

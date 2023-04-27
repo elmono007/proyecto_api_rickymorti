@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Proyecto API</title>
+</head>
+<body class="body_container">
+    <header class="header_container">
+        <div class="header_container_elem1">
+            <h1>Rick & Morty</h1>
+        </div>
+    </header>
+    
+    <main class="main_container_detail">
+        <div class="main_element1">Información de <%= character.name %></div>
+        <div>
+            <button class="main_element1_backButton" onclick="history.go(-1)">Back</button>
+        </div>
+                
+        
+        <div class="main_element_information_container">
+            <div class="main_element_info_image">
+                <img src="<%= character.image %>" alt="<%= character.name %>" class="characterImageDetail">
+            </div>
+            <div class="main_element_info_card_container">
+                <div class="main_element_info_card_container_elem">Id: <%= character.id %></div>
+                <div class="main_element_info_card_container_elem">Name: <%= character.name %></div>
+                <div class="main_element_info_card_container_elem">Species: <%= character.species %></div>
+                <div class="main_element_info_card_container_elem">Gender: <%= character.gender %></div>
+                <div class="main_element_info_card_container_elem">Status: <%= character.status %></div>
+                <div class="main_element_info_card_container_elem">Origin: <%= character.origin.name %></div>
+            </div>
+        </div>
+        
+    </main>   
+    <footer class="footer_container"> 
+        
+        <div class="footer_container_elem1">
+            <p>©Ernesto Caballero Vieyra | 2023</p> 
+        </div>
+        <div class="footer_container_elem2">
+            <p>
+              Github: <a href="https://github.com/elmono007" target="_blank"> elmono007</a>  
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
